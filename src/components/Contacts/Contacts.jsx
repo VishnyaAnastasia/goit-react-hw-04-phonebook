@@ -1,19 +1,18 @@
-import React from 'react';
 import styles from './Contacts.module.css';
 import PropTypes from 'prop-types';
 
 export const Contacts = ({ deleteContact, filteredContacts }) => {
   return (
     <ul>
-      {filteredContacts().map(contact => (
-        <li className={styles.contactInfo} key={contact.id}>
+      {filteredContacts().map(({ id, number, name }) => (
+        <li className={styles.contactInfo} key={id}>
           <div className={styles.contactLine}>
-            {contact.name}: {contact.number}
+            {name}: {number}
           </div>
           <button
             className={styles.btnDelete}
             onClick={deleteContact}
-            name={contact.id}
+            name={id}
           >
             Delete
           </button>
@@ -24,6 +23,6 @@ export const Contacts = ({ deleteContact, filteredContacts }) => {
 };
 
 Contacts.propTypes = {
-  contacts: PropTypes.arrayOf(PropTypes.object).isRequired,
+  filteredContacts: PropTypes.arrayOf(PropTypes.object).isRequired,
   deleteContact: PropTypes.func.isRequired,
 };

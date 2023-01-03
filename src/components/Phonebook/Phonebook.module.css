@@ -25,7 +25,7 @@ input::placeholder {
   margin-bottom: 15px;
 }
 
-.btnConteiner {
+.btnContainer {
   display: flex;
   justify-content: center;
   align-items: center;
