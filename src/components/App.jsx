@@ -62,9 +62,8 @@ export const App = () => {
       <Section title="Contacts">
         <Filter filterHandler={filterHandler} />
         <Contacts
-          contacts={contacts}
           deleteContact={deleteContact}
-          filteredContacts={filteredContacts}
+          filteredContacts={filteredContacts()}
         />
       </Section>
     </>
